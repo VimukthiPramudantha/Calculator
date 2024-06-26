@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+        // var  
+
     const buttonValues = {
         'mul':'*',
         'divide':'/',
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const button =document.getElementById(id);
             if (button){
                 button.textContent= value;
-                button.setAttribute('data-value',value);
+                // button.setAttribute('data-value',value);
 
                 button.onclick = function(num) {
 
@@ -33,28 +35,30 @@ document.addEventListener("DOMContentLoaded", function() {
                     // }
                     // else
                     console.log(value)
-                     if(id === 'clear') {
+                    if(id === 'clear') {
                         document.getElementById("display").innerText="";
                          
                     }
                     else if(id === 'mul'){
-                        document.getElementById("display").innerText='*';
+                        document.getElementById("display").innerText+='*';
                     }
                     else if(id === 'divide'){
-                        document.getElementById("display").innerText='/';
+                        document.getElementById("display").innerText+='/';
                     }
                     else if(id === 'mines'){
-                        document.getElementById("display").innerText='-';
+                        document.getElementById("display").innerText+='-';
                     }
                     else if(id === 'add'){
-                        document.getElementById("display").innerText='+';
+                        document.getElementById("display").innerText+='+';
                     }
-                    // else if(id === 'eq'){
-                    //     document.getElementById("display").innerText='=';
-                    // }
+                    else if(id === 'eq'){
+                        document.getElementById("display").innerText=eval(document.getElementById("display").innerText);
+                        
+                     }
                     else {
                         document.getElementById("display").innerText+=value;
                     }
+
                 }   
             }  
         }
